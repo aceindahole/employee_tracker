@@ -10,4 +10,13 @@ describe(Division) do
       expect(Division.all()).to(eq(worst_divisions))
     end
   end
+
+  describe("#add_employee") do
+    it("associates an employee with the division") do
+      division1 = Division.create({:name => "Candy Taste Testing"})
+      employee1 = Employee.create({:name => "Clem-Clem"})
+      division1.add_employee(employee1)
+      expect(employee1.division_id()).to(eq(division1.id))
+    end
+  end
 end
