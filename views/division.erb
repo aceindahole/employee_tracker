@@ -1,0 +1,15 @@
+<h1><%= @division.name %></h1>
+
+<% if @employees == [] %>
+<h3><%= @division.name %> has no employees</h3>
+<% else %>
+<h3><%= @division.name %>'s employees:</h3>
+<% end %>
+
+<ul>
+  <% @employees.each do |employee| %>
+  <li><a href="/employee/<%= employee.id %>"><%= employee.name %></a></li>
+  <% end %>
+</ul>
+
+<p><a href="/">Return to da company</p>
