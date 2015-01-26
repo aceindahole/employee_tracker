@@ -10,3 +10,4 @@ describe(Division) do
       expect(Division.all()).to(eq(worst_divisions))
     end
   end
+end
