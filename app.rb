@@ -7,13 +7,12 @@ require("pg")
 
 
 get('/') do
-  @tasks = Task.all()
+  @employees = Employee.all()
   erb(:index)
 end
 
-post('/tasks') do
-  description = params.fetch('description')
-  @task = Task.new({:description => description})
-  @task.save()
-  erb(:success)
+post('/employee') do
+  name = params.fetch('name')
+  @employee = Employee.create({:name => name})
+  erb(:index)
 end
