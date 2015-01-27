@@ -19,4 +19,13 @@ describe(Division) do
       expect(employee1.division_id()).to(eq(division1.id))
     end
   end
+
+  describe("#list_employees") do
+    it("lists employees associated with the division") do
+      division1 = Division.create({:name => "Candy Taste Testing"})
+      employee1 = Employee.create({:name => "Clem-Clem"})
+      division1.add_employee(employee1)
+      expect(division1.list_employees()).to(eq([employee1]))
+    end
+  end
 end

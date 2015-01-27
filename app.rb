@@ -26,7 +26,7 @@ end
 
 get('/division/:id') do
   @division = Division.find(params.fetch("id").to_i())
-  @employees = Employee.all()
+  @employees = @division.list_employees()
   erb(:division)
 end
 
